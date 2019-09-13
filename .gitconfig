@@ -1,0 +1,20 @@
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+    excludesfiles = ~/.gitignore_global
+
+[alias]
+    st = status
+    c = commit -m
+    a = add -A
+    p = push -u origin master
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    ls = ls-files
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
