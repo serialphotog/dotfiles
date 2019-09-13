@@ -24,3 +24,4 @@ Videos/*
 .zsh_history
 .gitconfig.local
 .viminfo
+dev/*
