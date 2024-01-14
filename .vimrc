@@ -1,5 +1,14 @@
-" Pathogen
-execute pathogen#infect()
+" Plug
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'gkapfham/vim-vitamin-onec'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'rstacruz/vim-closer'
+call plug#end()
 
 " Add fzf
 set rtp+=~/.fzf
@@ -28,8 +37,8 @@ set wildmenu
 set lazyredraw
 set showmatch
 set ruler
+set cc=80
 set title
-set visualbell
 set noerrorbells
 set laststatus=2
 
@@ -47,9 +56,22 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
+" Persistent undo
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
+" w!! to write a file using sudo
+cmap w!! w !sudo tee % >/dev/null
+
 " History
 set history=1000
 set undolevels=1000
+
+" Enable mouse support
+set mouse=a
 
 " Keys
 set backspace=indent,eol,start

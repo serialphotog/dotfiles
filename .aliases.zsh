@@ -1,8 +1,8 @@
 # ls
 alias ls='ls --color=auto'
-alias la='ls -A --color=auto'
-alias ll='ls -lahf --color=auto'
-alias lsl='ls -lhF --color=auto'
+alias la='ls -A'
+alias ll='ls -laF'
+alias lsl='ls -lhF'
 
 # cd
 alias ..='cd ..'
@@ -18,6 +18,19 @@ alias mkdir='mkdir -p'
 
 # grep
 alias grep='grep --color=auto'
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
 
 # Reload the config easily
 alias r!='source ~/.zshrc'
+
+# Gets alist of current ports
+alias ports="sudo netstat -tulanp"
+
+# Handy networking commands
+alias pg="ping -c 5 google.com"
+alias server="python -m http.server"
+
+# Misc.
+alias c="clear"
+alias vi="vim"
