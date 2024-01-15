@@ -11,5 +11,4 @@ ln -s /home/adam/.dotfiles/.gitignore /home/adam/.gitignore
 ln -s /home/adam/.dotfiles/.giconfig /home/adam/.gitconfig
 ln -s /home/adam/.dotfiles/.gdbinit /home/adam/.gdbinit
 ln -s /home/adam/.dotfiles/.aliases.zsh /home/adam/.aliases.zsh
-ln -s /home/adam/.dotfiles/.vim /home/adam/.vim
 ```

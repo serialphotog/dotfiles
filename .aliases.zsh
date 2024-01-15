@@ -42,3 +42,7 @@ alias server="python -m http.server"
 # Misc.
 alias c="clear"
 alias vi="vim"
+
+# Tor
+alias starttor='sudo systemctl start tor.service'
+alias stoptor='sudo systemctl stop tor.service'
