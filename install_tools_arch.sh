@@ -12,6 +12,6 @@
 # Install basic tools from repos
 sudo pacman -S git gcc gdb vim make zsh tmux vscode obsidian binutils nmap \
 wireshark-qt john libvirt virt-manager qemu-full tor torbrowser-launcher \
-hugo opensnitch radare2 rz-cutter
+hugo opensnitch radare2 rz-cutter htop
 
 yay -S oh-my-zsh-git google-chrome ghidra-git spotify
