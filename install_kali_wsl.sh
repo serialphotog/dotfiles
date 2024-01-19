@@ -6,7 +6,7 @@
 ./install_base.sh
 
 # Install packages
-sudo apt update && sudo apt install -y kali-linux-large kali-win-kex
+sudo apt update && sudo apt install -y kali-linux-default kali-win-kex
 
 # Install Plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
