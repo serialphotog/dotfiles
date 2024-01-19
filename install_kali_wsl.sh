@@ -7,3 +7,7 @@
 
 # Install packages
 sudo apt update && sudo apt install -y kali-linux-large kali-win-kex
+
+# Install Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

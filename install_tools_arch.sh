@@ -25,3 +25,7 @@ sudo systemctl enable opensnitchd
 sudo systemctl start opensnitchd
 sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
+
+# Install Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
