@@ -46,3 +46,6 @@ alias vi="vim"
 # Tor
 alias starttor='sudo systemctl start tor.service'
 alias stoptor='sudo systemctl stop tor.service'
+
+# Source local aliases that we don't want in this repo
+source ~/.aliases.local

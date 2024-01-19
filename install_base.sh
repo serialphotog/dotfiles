@@ -11,3 +11,5 @@ ln -s /home/$USER/.dotfiles/.gitignore /home/$USER/.gitignore
 ln -s /home/$USER/.dotfiles/.gitconfig /home/$USER/.gitconfig
 ln -s /home/$USER/.dotfiles/.gdbinit /home/$USER/.gdbinit
 ln -s /home/$USER/.dotfiles/.aliases.zsh /home/$USER/.aliases.zsh
+
+touch ~/.aliases.local
