@@ -98,3 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases.zsh
+
+export ANDROID_HOME=/home/adam/Android/Sdk
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="$PATH:/opt/brew/bin"

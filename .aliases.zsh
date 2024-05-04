@@ -47,5 +47,9 @@ alias vi="vim"
 alias starttor='sudo systemctl start tor.service'
 alias stoptor='sudo systemctl stop tor.service'
 
+# Arch Linux Stuffs
+alias cleancache='yay -Scc'
+alias rankmirrors='eos-rankmirrors'
+
 # Source local aliases that we don't want in this repo
 source ~/.aliases.local

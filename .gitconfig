@@ -18,3 +18,7 @@
     status = auto
     branch = auto
     ui = true
+[init]
+	defaultBranch = main
+[safe]
+	directory = /opt/flutter
