@@ -5,7 +5,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
-Plug 'gkapfham/vim-vitamin-onec'
+Plug 'tomasiser/vim-code-dark'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'rstacruz/vim-closer'
 call plug#end()
@@ -16,7 +16,7 @@ set rtp+=~/.fzf
 " Colors
 syntax enable
 set termguicolors
-colorscheme vitaminonec
+colorscheme codedark
 
 " Spaces & Tabs
 set shiftwidth=2
@@ -80,5 +80,5 @@ map ; :Files<CR> " Open FZF with ;
 
 " Lightline
 let g:lightline = {
-    \ 'colorscheme': 'vitaminonec'
+    \ 'colorscheme': 'codedark'
     \ }
