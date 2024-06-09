@@ -47,6 +47,9 @@ alias vi="vim"
 alias starttor='sudo systemctl start tor.service'
 alias stoptor='sudo systemctl stop tor.service'
 
+# Fix Tmux
+alias tmux='TERM=screen-256color-bce tmux'
+
 # Arch Linux Stuffs
 alias cleancache='yay -Scc'
 alias rankmirrors='eos-rankmirrors'
