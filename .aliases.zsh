@@ -6,7 +6,7 @@ alias lsl='ls -lhF'
 
 # Path aliases
 alias dotfiles='cd ~/.dotfiles'
-alias dev='cd ~/dev'
+alias dev='cd ~/Dev'
 alias downloads='cd ~/Downloads'
 alias desktop='cd ~/Desktop'
 alias documents='cd ~/Documents'
@@ -31,6 +31,7 @@ alias fgrep="fgrep --color=auto"
 
 # Reload the config easily
 alias r!='source ~/.zshrc'
+alias sourceme='source ~/.zshrc'
 
 # Gets alist of current ports
 alias ports="sudo netstat -tulanp"
@@ -49,10 +50,6 @@ alias stoptor='sudo systemctl stop tor.service'
 
 # Fix Tmux
 alias tmux='TERM=screen-256color-bce tmux'
-
-# Arch Linux Stuffs
-alias cleancache='yay -Scc'
-alias rankmirrors='eos-rankmirrors'
 
 # Source local aliases that we don't want in this repo
 source ~/.aliases.local
