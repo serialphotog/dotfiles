@@ -27,7 +27,38 @@ install_flatpaks() {
     done
 }
 
+# Sets some default settings
+settings() {
+    # Auto hide the docker
+    gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
+    gsettings set org.gnome.shell.extensions.dash-to-dock intellihide true
+    gsettings set org.gnome.shell.extensions.dash-to-dock intellihide-mode "ALL_WINDOWS"
+
+    # Place the dock on the left-center of screen
+    gsettings set org.gnome.shell.extensions.dash-to-dock dock-alignment "CENTER"
+    gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "LEFT"
+
+    # Smaller dock icons
+    gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 32
+
+    # Show the battery percentage
+    gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+    # Enable natural scrolling for touchpad
+    gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
+    
+    # Sane numlock config
+    gsettings set org.gnome.desktop.peripherals.keyboard numlock-state true 
+    gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
+
+    # Enable all WM buttons
+    gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:minimize,maximize,close"
+}
+
 install_pop() {
+    echo -e "${GREEN}[Info]: Overriding default desktop settings${CLEAR}"
+    settings
+
     echo -e "${GREEN}[Info]: Installing Pop OS specific stuff${CLEAR}"
     sudo apt install -y code google-chrome-stable
 
