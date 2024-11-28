@@ -32,6 +32,9 @@ case $1 in
         cd ..
         rm -rf ./fons
 
+        echo -e "${GREE}[Info]: Setting default shell to ZSH${CLEAR}"
+        chsh -s $(which zsh)
+
         echo -e "$GREEN[Info]: Finished installing. Rebooting now${CLEAR}"
         sudo reboot now
         ;;
