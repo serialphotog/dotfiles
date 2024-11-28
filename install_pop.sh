@@ -90,4 +90,9 @@ install_pop() {
     install_flatpaks
 
     install_metasploit
+
+    # Add user to necessary groups for KVM & libvirt
+    echo -e "${GREEN}[Info]: Adding user to necessary groups for KVM and libvirt${CLEAR}"
+    sudo usermod -aG kvm $USER
+    sudo usermod -aG libvirt $USER
 }
