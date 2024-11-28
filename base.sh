@@ -96,7 +96,7 @@ install_ubuntu_packages() {
     echo -e "${GREEN}[Info]: Installing Ubuntu packages${CLEAR}"
     sudo apt update 
     sudo apt install -y git gcc g++ gdb vim make binutils john hugo htop curl \
-    tmux gnome-boxes golang virt-manager
+    tmux gnome-boxes golang virt-manager nmap ncat wireshark hping3 iperf3
 }
 
 # Gets various ISOs I pretty much always want for my machines
