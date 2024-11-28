@@ -64,6 +64,18 @@ install_metasploit() {
     rm msfinstall
 }
 
+install_docker() {
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt update
+    sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+}
+
 install_pop() {
     echo -e "${GREEN}[Info]: Overriding default desktop settings${CLEAR}"
     settings
@@ -95,4 +107,17 @@ install_pop() {
     echo -e "${GREEN}[Info]: Adding user to necessary groups for KVM and libvirt${CLEAR}"
     sudo usermod -aG kvm $USER
     sudo usermod -aG libvirt $USER
+
+    # Install Docker
+    echo -e "${GREEN}[Info]: Installing Docker${CLEAR}"
+    install_docker
+
+    # Allow Docker without root
+    if [ $(getent group docker) ]; then
+        echo -e "${GREEN}[Info]: Docker group already exists.${CLEAR}"
+    else 
+        echo -e "${GREEN}[Info]: Docker group doesn't exist. Adding it now.${CLEAR}"
+    fi
+    echo -e "${GREEN}[Info]: Adding $USER to the docker group${CLEAR}"
+    sudo usermod -aG docker $USER
 }
