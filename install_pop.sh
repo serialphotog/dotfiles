@@ -9,7 +9,6 @@ FLATPAKS_TO_INSTALL=(
     org.gimp.GIMP
     com.obsproject.Studio
     org.qgis.qgis
-    org.torproject.torbrowser-launcher
 )
 
 # Installs the Flatpaks
@@ -61,7 +60,7 @@ install_pop() {
     settings
 
     echo -e "${GREEN}[Info]: Installing Pop OS specific stuff${CLEAR}"
-    sudo apt install -y code google-chrome-stable
+    sudo apt install -y code google-chrome-stable torbrowser-launcher
 
     echo -e "${GREE}[Info]: Removing some useless default packages${CLEAR}"
     sudo apt remove -y geary gnome-weather gnome-contacts gnome-calendar
