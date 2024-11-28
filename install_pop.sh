@@ -31,6 +31,9 @@ install_pop() {
     echo -e "${GREEN}[Info]: Installing Pop OS specific stuff${CLEAR}"
     sudo apt install -y code google-chrome-stable
 
+    echo -e "${GREE}[Info]: Removing some useless default packages${CLEAR}"
+    sudo apt remove geary gnome-weather gnome-contacts gnome-calendar
+
     echo -e "${GREEN}[Info]: Installing 1Password${CLEAR}"
     curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
     echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
