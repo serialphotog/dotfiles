@@ -10,6 +10,10 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 case $1 in
     "wsl")
         echo -e "${GREEN}[Info]: Install target is WSL${CLEAR}"
+
+        # Ensure we have wget because we need it later
+        sudo apt install -y wget
+
         install_omzsh_ubuntu
         install_base $SCRIPT_DIR
         install_ubuntu_packages
@@ -18,6 +22,10 @@ case $1 in
         ;;
     "pop")
         echo -e "${GREEN}[Info]: Install target is Pop OS${CLEAR}"
+
+        # Ensure we have wget because we need it later
+        sudo apt install -y wget 
+
         install_omzsh_ubuntu
         install_base $SCRIPT_DIR
         install_ubuntu_packages
@@ -40,6 +48,10 @@ case $1 in
         ;;
     "arch")
         echo -e "${GREEN}[Info]: Install target is Arch${CLEAR}"
+
+        # Ensure we have wget because we need it later
+        sudo pacman -S wget
+
         install_base $SCRIPT_DIR
         source install_tools_arch.sh
         install_arch

@@ -64,6 +64,10 @@ install_base() {
     echo -e "${GREEN}[Info]: Creating the .aliases.local file${CLEAR}"
     touch /home/$USER/.aliases.local
 
+    # Install GEF
+    echo -e "${GREEN}[Info]: Installing GEF${CLEAR}"
+    wget -O ~/.gdbinit-gef.py -q https://gef.blah.cat/py
+
     # Install Rust
     echo -e "${GREE}[Info]: Installing Rust${CLEAR}"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
