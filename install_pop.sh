@@ -55,6 +55,15 @@ settings() {
     gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:minimize,maximize,close"
 }
 
+install_metasploit() {
+    echo -e "${GREEN}[None]: Installing Metasploit${CLEAR}"
+    cd /tmp
+    curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+    chmod 755 msfinstall
+    ./msfinstall
+    rm msfinstall
+}
+
 install_pop() {
     echo -e "${GREEN}[Info]: Overriding default desktop settings${CLEAR}"
     settings
@@ -79,4 +88,6 @@ install_pop() {
 
     echo -e "${GREEN}[Info]: Installing Flatpaks${CLEAR}"
     install_flatpaks
+
+    install_metasploit
 }
