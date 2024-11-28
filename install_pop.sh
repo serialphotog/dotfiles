@@ -32,7 +32,7 @@ install_pop() {
     sudo apt install -y code google-chrome-stable
 
     echo -e "${GREE}[Info]: Removing some useless default packages${CLEAR}"
-    sudo apt remove geary gnome-weather gnome-contacts gnome-calendar
+    sudo apt remove -y geary gnome-weather gnome-contacts gnome-calendar
 
     echo -e "${GREEN}[Info]: Installing 1Password${CLEAR}"
     curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
@@ -41,7 +41,7 @@ install_pop() {
     curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
     sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
     curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
-    sudo apt update && sudo apt install 1password
+    sudo apt update && sudo apt install -y 1password
 
     echo -e "${GREEN}[Info]: Installing TailScale${CLEAR}"
     curl -fsSL https://tailscale.com/install.sh | sh
