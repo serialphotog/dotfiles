@@ -4,14 +4,6 @@ alias la='ls -A'
 alias ll='ls -laF'
 alias lsl='ls -lhF'
 
-# Path aliases
-alias dotfiles='cd ~/.dotfiles'
-alias dev='cd ~/Dev'
-alias downloads='cd ~/Downloads'
-alias desktop='cd ~/Desktop'
-alias documents='cd ~/Documents'
-alias pictures='cd ~/Pictures'
-
 # cd
 alias ..='cd ..'
 alias ...'cd ../..'
