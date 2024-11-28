@@ -90,5 +90,5 @@ install_ubuntu_packages() {
     echo -e "${GREEN}[Info]: Installing Ubuntu packages${CLEAR}"
     sudo apt update 
     sudo apt install -y git gcc g++ gdb vim make binutils john hugo htop curl \
-    tmux gnome-boxes golang
+    tmux gnome-boxes golang virt-manager
 }
