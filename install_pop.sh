@@ -9,6 +9,7 @@ FLATPAKS_TO_INSTALL=(
     org.gimp.GIMP
     com.obsproject.Studio
     org.qgis.qgis
+    org.torproject.torbrowser-launcher
 )
 
 # Installs the Flatpaks
