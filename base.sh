@@ -74,6 +74,12 @@ install_base() {
 
     install_plug
     install_powerline_fonts
+
+    # Get common ISOs I typically need
+    get_isos
+
+    # Get password/word lists
+    get_lists
 }
 
 # Installs Oh-My-ZSH on Ubuntu-based distros
@@ -91,4 +97,37 @@ install_ubuntu_packages() {
     sudo apt update 
     sudo apt install -y git gcc g++ gdb vim make binutils john hugo htop curl \
     tmux gnome-boxes golang virt-manager
+}
+
+# Gets various ISOs I pretty much always want for my machines
+get_isos() {
+    echo -e "${GREEN}[Info]: Obtaining standard ISOs${CLEAR}"
+    mkdir -p /home/$USER/tools/ISOs
+
+    echo -e "${GREEN}[Info]: Obtaining Tails ISO...${CLEAR}"
+    wget -O /home/$USER/tools/ISOs/tails-6.9.iso https://download.tails.net/tails/stable/tails-amd64-6.9/tails-amd64-6.9.iso
+
+    echo -e "${GREEN}[Info]: Obtaining Kali ISO...${CLEAR}"
+    wget -O /home/$USER/tools/ISOs/kali-2024.3.iso https://cdimage.kali.org/kali-2024.3/kali-linux-2024.3-installer-amd64.iso
+}
+
+# Gets common password/wordlists I like to have on hand
+get_lists() {
+    echo -e "${GREEN}[Info]: Obtaining password/word lists${CLEAR}"
+    mkdir -p /home/$USER/tools/lists
+
+    echo -e "${GREEN}[Info]: Obtaining Rock You password list...${CLEAR}"
+    wget -O /home/$USER/tools/lists/rockyou.txt.gz https://github.com/00xBAD/kali-wordlists/raw/refs/heads/master/rockyou.txt.gz
+    gzip -d /home/$USER/tools/lists/rockyou.txt.gz
+
+    echo -e "${GREEN}[Info]: Obtaining dirbuster lists...${CLEAR}"
+    mkdir -p /home/$USER/tools/lists/dirbuster
+    wget -O /home/$USER/tools/lists/dirbuster/directory-list-lowercase-2.3-small.txt https://github.com/00xBAD/kali-wordlists/raw/refs/heads/master/dirbuster/directory-list-lowercase-2.3-small.txt
+    wget -O /home/$USER/tools/lists/dirbuster/directory-list-lowercase-2.3-medium.txt https://github.com/00xBAD/kali-wordlists/raw/refs/heads/master/dirbuster/directory-list-lowercase-2.3-medium.txt
+    wget -O /home/$USER/tools/lists/dirbuster/directory-list-2.3-small.txt https://github.com/00xBAD/kali-wordlists/raw/refs/heads/master/dirbuster/directory-list-2.3-small.txt
+    wget -O /home/$USER/tools/lists/dirbuster/directory-list-2.3-medium.txt https://github.com/00xBAD/kali-wordlists/raw/refs/heads/master/dirbuster/directory-list-2.3-medium.txt
+    wget -O /home/$USER/tools/lists/dirbuster/directory-list-1.0.txt https://github.com/00xBAD/kali-wordlists/raw/refs/heads/master/dirbuster/directory-list-1.0.txt
+
+    echo -e "${GREEN}[Info]: Obtaining John password list...${CLEAR}"
+    wget -O /home/$USER/tools/lists/john.lst https://github.com/00xBAD/kali-wordlists/raw/refs/heads/master/john.lst
 }
