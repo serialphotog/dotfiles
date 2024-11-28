@@ -64,13 +64,17 @@ install_base() {
     echo -e "${GREEN}[Info]: Creating the .aliases.local file${CLEAR}"
     touch /home/$USER/.aliases.local
 
+    # Install Rust
+    echo -e "${GREE}[Info]: Installing Rust${CLEAR}"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
     install_plug
     install_powerline_fonts
 }
 
 # Installs Oh-My-ZSH on Ubuntu-based distros
 install_omzsh_ubuntu() {
-    echo -e "${GREEN}[Info]: Installing Oh-My-ZSH...${CLEAR}"
+    echo -e "${GREEN}[Info]: Installing Oh-My-ZSH... Don't set shell right now, we do it later.${CLEAR}"
     sudo apt install -y zsh
     sudo ln -s /home/$USER/.oh-my-zsh /usr/share/oh-my-zsh # Arch compatibility
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -82,5 +86,5 @@ install_ubuntu_packages() {
     echo -e "${GREEN}[Info]: Installing Ubuntu packages${CLEAR}"
     sudo apt update 
     sudo apt install -y git gcc g++ gdb vim make binutils john hugo htop curl \
-    tmux
+    tmux gnome-boxes golang
 }
