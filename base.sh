@@ -99,6 +99,14 @@ install_ubuntu_packages() {
     tmux gnome-boxes golang virt-manager nmap ncat wireshark hping3 iperf3 \
     python-is-python3 python3-pip nodejs npm ca-certificates libgtk-4-dev \
     build-essential
+
+    # Install NodeJS
+    echo -e "${GREEN}[Info]: Installing Node version manager${CLEAR}"
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+    source /home/$USER/.zshrc
+    echo -e "${GREE}[Info]: Installing NodeJS 22${CLEAR}"
+    nvm install 22
+    nvm use 22
 }
 
 # Gets various ISOs I pretty much always want for my machines
