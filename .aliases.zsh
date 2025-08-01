@@ -4,12 +4,6 @@ alias la='ls -A'
 alias ll='ls -laF'
 alias lsl='ls -lhF'
 
-# cd
-alias ..='cd ..'
-alias ...'cd ../..'
-alias ....='cd ../../..'
-alias ~='cd ~'
-
 # cp
 alias cp='cp -r'
 
@@ -35,10 +29,6 @@ alias server="python -m http.server"
 # Misc.
 alias c="clear"
 alias vi="vim"
-
-# Tor
-alias starttor='sudo systemctl start tor.service'
-alias stoptor='sudo systemctl stop tor.service'
 
 # Fix Tmux
 alias tmux='TERM=screen-256color-bce tmux'
