@@ -21,6 +21,16 @@ case $1 in
         install_pop
 
         ;;
+    "ubuntu")
+        echo -e "${GREEN}[Info]: Installing for Ubuntu${CLEAR}"
+
+        # Enssure we have wget as we need it later
+        sudo apt install -y wget
+
+        # Perform the base install
+        install_base $SCRIPT_DIR
+
+        ;;
     "arch")
         echo -e "${GREEN}[Info]: Installing for Arch Linux${CLEAR}"
 
