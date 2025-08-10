@@ -24,8 +24,11 @@ case $1 in
     "ubuntu")
         echo -e "${GREEN}[Info]: Installing for Ubuntu${CLEAR}"
 
-        # Enssure we have wget as we need it later
+        # Ensure we have wget as we need it later
         sudo apt install -y wget
+
+        # Ensure we have powerline fonts
+        sudo apt-get install fonts-powerline
 
         # Perform the base install
         install_base $SCRIPT_DIR
