@@ -11,8 +11,8 @@ case $1 in
         source ./installer/_pop.sh
         echo -e "${GREEN}[Info]: Installing for PopOS${CLEAR}"
 
-        # Ensure we have wget as we need it later
-        sudo apt install -y wget
+        # Do the Ubuntu common install 
+        install_ubuntu_based
 
         # Perform the base install
         install_base $SCRIPT_DIR
@@ -24,12 +24,9 @@ case $1 in
     "ubuntu")
         echo -e "${GREEN}[Info]: Installing for Ubuntu${CLEAR}"
 
-        # Ensure we have wget as we need it later
-        sudo apt install -y wget
-
-        # Ensure we have powerline fonts
-        sudo apt-get install fonts-powerline
-
+        # Do the Ubuntu common install 
+        install_ubuntu_based
+        
         # Perform the base install
         install_base $SCRIPT_DIR
 
@@ -37,8 +34,8 @@ case $1 in
     "arch")
         echo -e "${GREEN}[Info]: Installing for Arch Linux${CLEAR}"
 
-        # Ensure we have wget as we need it later
-        sudo pacman -S wget
+        # Ensure we have the utilities we need
+        sudo pacman -S wget bat eza fd
 
         # Perform the base install
         install_base $SCRIPT_DIR
@@ -47,3 +44,18 @@ case $1 in
         echo -e "${RED}[Error]: Please specify an install target${CLEAR}"
         ;;
 esac
+
+install_ubuntu_based() {
+    # Ensure we have the utilities we need
+    sudo apt install -y wget bat eza fd-find
+
+    # Fix bat on Ubuntu-bases systems
+    mkdir -p ~/.local/bin
+    ln -s /usr/bin/batcat ~/.local/bin/bat
+
+    # Fix fd on Ubuntu-based systems
+    ln -s $(which fdfind) ~/.local/bin/fd
+
+    # Ensure we have powerline fonts
+    sudo apt-get install fonts-powerline
+}

@@ -19,7 +19,7 @@ symlink_file() {
     else
         echo -e "${GREEN}[Info]: Attempting to symlink $src to $dst${CLEAR}"
 
-        # Bacckup the original if it exists
+        # Backup the original if it exists
         if [ -f $dst ]; then
             echo -e "$dst already exists... Moving it to $dst.old"
             mv $dst $dst.old
@@ -52,8 +52,15 @@ install_base() {
         done
     fi
 
+    # Create the `aliases.local` file for aliases that we don't necessarily
+    # want to be public.
     echo -e "${GREEN}[Info]: Creating the .aliases.local file${CLEAR}"
     touch /home/$USER/.aliases.local
+
+    # Install the Hack Nerd Font
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip -O /tmp/Hack.zip
+    mkdir -p /home/$USER/.fonts/
+    unzip /tmp/Hack.zip -d /home/$USER/.fonts/
 
     # Install GEF
     echo -e "${GREEN}[Info]: Installing GEF${CLEAR}"
