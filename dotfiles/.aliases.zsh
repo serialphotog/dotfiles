@@ -7,17 +7,11 @@ alias la='ls -A'
 alias ll='ls -laF'
 alias lsl='ls -lhF'
 
-# Replace `find` with `fd`
-alias find='fd'
-
 # cp
 alias cp='cp -r'
 
 # mkdir
 alias mkdir='mkdir -p'
-
-# Replace `grep` with `rg`
-alias grep='rg'
 
 # Reload the config easily
 alias r!='source ~/.zshrc'

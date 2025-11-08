@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/usr/share/oh-my-zsh
+export ZSH=/home/$USER/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a ragit stndom theme each time oh-my-zsh is loaded, in which case,
@@ -23,4 +23,4 @@ source ~/.aliases.zsh
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 # Adjust the path
-export PATH=$PATH:/home/adam/.local/bin
+export PATH=$PATH:/home/adam/.local/bin:/home/adam/.cargo/bin
