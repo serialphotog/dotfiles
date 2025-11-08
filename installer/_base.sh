@@ -41,6 +41,7 @@ symlink_file() {
 install_base() {
     path=$1
 
+    # Install the base dotfiles
     path="$1/dotfiles"
     if [ ! -d $path ]; then
         echo -e "${RED}[Error]: $path does not exist!${CLEAR}"
@@ -50,6 +51,25 @@ install_base() {
             filename=$(basename "$filepath")
             symlink_file $filepath "/home/$USER/$filename"
         done
+    fi
+
+    # Install the Kitty config
+    path="$1/kitty"
+    if [ ! -d $path ]; then
+        echo -e "${RED}[Error]: $path does not exist!${CLEAR}"
+    else
+        if [ ! -d "/home/$USER/.config/kitty" ]; then
+            echo -e "${GREEN}[Info]: Kitty config directory doesn't exist. Creating it.${CLEAR}"
+            mkdir -p /home/$USER/.config/kitty
+        fi
+
+        if [ -f "/home/$USER/.config/kitty/kitty.conf" ]; then
+            echo -e "${GREEN}[Info]: /home/$USER/.config/kitty/kitty.conf already exists. Moving it to kitty.conf.old${CLEAR}"
+            mv /home/$USER/.config/kitty/kitty.conf /home/$USER/.config/kitty/kitty.conf.old
+        fi
+
+        # Symlink our config to the Kitty config path
+        symlink_file "$path/kitty.conf" "/home/$USER/.config/kitty/kitty.conf"
     fi
 
     # Create the `aliases.local` file for aliases that we don't necessarily

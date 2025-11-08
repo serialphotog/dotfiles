@@ -1,13 +1,9 @@
 # Dotfiles
 
-These are my Linux dotfiles with included install script. The installer script currently supports the following platforms:
-
-- PopOS (`pop`)
-- Ubuntu (`ubuntu`)
-- Arch Linux (`arch`)
+These are my Arch Linux dotfiles with included install script. The installer could certainly stand to be optimized a bit, but I can't be bothered to do it right now ;)
 
 ## Installation
 
 ```bash
-./install <platform>
+./install.sh
 ```
