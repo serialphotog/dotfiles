@@ -12,3 +12,7 @@ sudo pacman -S wget gcc gdb git binutils binwalk
 # Run the install script
 echo -e "${GREEN}[Info]: Running the base install script${CLEAR}"
 install_base $SCRIPT_DIR
+
+# Change the default shell to zsh
+echo -e "${GREEN}[Info]: Changing default shell to zsh${CLEAR}"
+chsh -s $(which zsh)
