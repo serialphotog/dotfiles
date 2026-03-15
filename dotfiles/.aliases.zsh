@@ -1,8 +1,4 @@
-# Replace `cat` with `bat`
-alias cat='bat'
-
-# Replace `ls` with `eza`
-alias ls='eza --icons=always --group-directories-first --classify=auto'
+# ls aliases
 alias la='ls -A'
 alias ll='ls -laF'
 alias lsl='ls -lhF'

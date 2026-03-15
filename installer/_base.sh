@@ -53,34 +53,23 @@ install_base() {
         done
     fi
 
-    # Install the Kitty config
-    path="$1/kitty"
+    # Install the p10k instant config file
+    path="$1/other"
     if [ ! -d $path ]; then
         echo -e "${RED}[Error]: $path does not exist!${CLEAR}"
     else
-        if [ ! -d "/home/$USER/.config/kitty" ]; then
-            echo -e "${GREEN}[Info]: Kitty config directory doesn't exist. Creating it.${CLEAR}"
-            mkdir -p /home/$USER/.config/kitty
+        if [ ! -f "/home/$USER/.cache/p10k-instant-prompt-adam.zsh" ]; then
+            echo -e "${GREEN}[Info]: Installing the p10k instant prompt config file${CLEAR}"
+            symlink_file "$path/p10k-instant-prompt-adam.zsh" "/home/$USER/.cache/p10k-instant-prompt-adam.zsh"
+        else
+            echo -e "${YELLOW}[Warning]: The p10k instant prompt config file already exists. Skipping installation.${CLEAR}"
         fi
-
-        if [ -f "/home/$USER/.config/kitty/kitty.conf" ]; then
-            echo -e "${GREEN}[Info]: /home/$USER/.config/kitty/kitty.conf already exists. Moving it to kitty.conf.old${CLEAR}"
-            mv /home/$USER/.config/kitty/kitty.conf /home/$USER/.config/kitty/kitty.conf.old
-        fi
-
-        # Symlink our config to the Kitty config path
-        symlink_file "$path/kitty.conf" "/home/$USER/.config/kitty/kitty.conf"
     fi
 
     # Create the `aliases.local` file for aliases that we don't necessarily
     # want to be public.
     echo -e "${GREEN}[Info]: Creating the .aliases.local file${CLEAR}"
     touch /home/$USER/.aliases.local
-
-    # Install the Hack Nerd Font
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip -O /tmp/Hack.zip
-    mkdir -p /home/$USER/.fonts/
-    unzip /tmp/Hack.zip -d /home/$USER/.fonts/
 
     # Install GEF
     echo -e "${GREEN}[Info]: Installing GEF${CLEAR}"
