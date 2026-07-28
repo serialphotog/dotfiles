@@ -11,7 +11,7 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Aliases
-source ~/.dotfiles/dotfiles/.aliases.zsh
+source ~/.aliases.zsh
 
 # 1Password SSH integration
 export SSH_AUTH_SOCK=~/.1password/agent.sock

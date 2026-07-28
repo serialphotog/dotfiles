@@ -49,7 +49,7 @@ install_base() {
         shopt -s dotglob
         for filepath in "$path"/*; do
             filename=$(basename "$filepath")
-            symlink_file $filepath "/home/$USER/$filename"
+            symlink_file $filepath "$HOME/$filename"
         done
     fi
 
@@ -58,9 +58,9 @@ install_base() {
     if [ ! -d $path ]; then
         echo -e "${RED}[Error]: $path does not exist!${CLEAR}"
     else
-        if [ ! -f "/home/$USER/.cache/p10k-instant-prompt-adam.zsh" ]; then
+        if [ ! -f "$HOME/.cache/p10k-instant-prompt-adam.zsh" ]; then
             echo -e "${GREEN}[Info]: Installing the p10k instant prompt config file${CLEAR}"
-            symlink_file "$path/p10k-instant-prompt-adam.zsh" "/home/$USER/.cache/p10k-instant-prompt-adam.zsh"
+            symlink_file "$path/p10k-instant-prompt-adam.zsh" "$HOME/.cache/p10k-instant-prompt-adam.zsh"
         else
             echo -e "${YELLOW}[Warning]: The p10k instant prompt config file already exists. Skipping installation.${CLEAR}"
         fi
@@ -69,7 +69,7 @@ install_base() {
     # Create the `aliases.local` file for aliases that we don't necessarily
     # want to be public.
     echo -e "${GREEN}[Info]: Creating the .aliases.local file${CLEAR}"
-    touch /home/$USER/.aliases.local
+    touch "$HOME/.aliases.local"
 
     # Install GEF
     echo -e "${GREEN}[Info]: Installing GEF${CLEAR}"
@@ -77,7 +77,7 @@ install_base() {
 
     # Install Plug for VIM
     echo -e "${GREEN}[Info]: Installing Plug${CLEAR}"
-    mkdir -p /home/$USER/.vim/autoload
+    mkdir -p "$HOME/.vim/autoload"
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
