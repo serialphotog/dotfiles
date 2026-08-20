@@ -1,0 +1,8 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+set -eufo pipefail
+
+if [ ! -f "$HOME/.gdbinit-gef.py" ]; then
+    bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
+fi
+{{- end -}}
