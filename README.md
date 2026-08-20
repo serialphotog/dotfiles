@@ -7,4 +7,4 @@ My current dotfiles used across MacOS and Linux.
 1. [Install Chezmoi](https://www.chezmoi.io/install/). 
 2. Apply with `chezmoi init --aplly https://github.com/serialphotog/dotfiles.git`
 
-You can update them with `chezmoi update`.
+You can update them with `chezmoi update` and apply with `chezmoi -v apply`.
