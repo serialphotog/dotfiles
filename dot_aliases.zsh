@@ -18,3 +18,4 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 # Misc.
 alias c='clear'
 alias vi='vim'
+alias python='python3'
