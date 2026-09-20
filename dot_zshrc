@@ -112,3 +112,4 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Load our custom aliases
 source ~/.aliases.zsh
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
