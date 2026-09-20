@@ -9,6 +9,9 @@ alias cp='cp -r'
 # mkdir
 alias mkdir='mkdir -p'
 
+# Replace default utils
+alias cat='bat'
+
 # Make it easier to reload the config
 alias sourceme='source ~/.zshrc'
 

@@ -4,6 +4,12 @@ ZSH_THEME="agnoster"
 plugins=(git colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
+
 {{ if eq .chezmoi.os "darwin" -}}
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 export NVM_DIR="$HOME/.nvm"
