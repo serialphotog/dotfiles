@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Ensure the tools directory exists
+mkdir -p ~/Tools/
+
+# Get Ghidra
+if [ -d "~/Tools/ghidra/" ]; then
+   echo "Removing previous Ghidra install..."
+   rm -r "~/Tools/ghidra/"
+fi
+
+echo "Downloading Ghidra..."
+curl -L# https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.3_build/ghidra_12.1.3_PUBLIC_20260817.zip -o ~/Tools/ghidra.zip
+unzip ~/Tools/ghidra.zip -d ~/Tools
+rm ~/Tools/ghidra.zip
+mv ~/Tools/ghidra_12.1.3_PUBLIC/ ~/Tools/ghidra
