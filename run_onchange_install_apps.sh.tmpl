@@ -1,5 +1,7 @@
-{{- if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
+
+{{ if eq .chezmoi.os "darwin" -}}
+# Install MacOS packages
 echo "Installing Homebrew-managed tools..."
 
 brew install --cask 1password
@@ -40,4 +42,17 @@ brew install cmake
 brew install gradle
 brew install nmap
 brew install openjdk
+{{- end -}}
+
+{{- $isArchLike := or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "cachyos") (has "arch" (.chezmoi.osRelease.idLike | splitList " ")) -}}
+{{- if and (eq .chezmoi.os "linux") $isArchLike -}}
+# Install Arch Linux/CachyOS Tools
+echo "Installing Arch Linux Packages..."
+sudo pacman -Syu
+sudo pacman -S \
+    binutils \
+    gdb \
+    gcc \
+    ghostty \
+    git
 {{- end -}}
