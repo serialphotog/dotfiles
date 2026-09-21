@@ -1,0 +1,38 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+echo "Installing Homebrew-managed tools..."
+
+brew install --cask 1password
+brew install --cask android-studio
+brew install --cask bambu-studio
+brew install --cask betterdisplay
+brew install --cask claude
+brew install --cask claude-code
+brew install --cask docker-desktop
+brew install --cask firefox
+brew install --cask freecad
+brew install --cask ghostty
+brew install --cask linearmouse
+brew install --cask little-snitch
+brew install --cask middleclick
+brew install --cask minecraft
+brew install --cask mitmproxy
+brew install --cask obsidian
+brew install --cask onyx
+brew install --cask proton-mail-bridge
+brew install --cask rustdesk
+brew install --cask shottr
+brew install --cask spotify
+brew install --cask tailscale-app
+brew install --cask tor-browser
+brew install --cask transmission
+brew install --cask visual-studio-code
+brew install --cask wireshark-app
+
+brew install bat
+brew install btop
+brew install cloc
+brew install cmake
+brew install nmap
+brew install openjdk
+{{- end -}}
