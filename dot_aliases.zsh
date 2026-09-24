@@ -18,6 +18,9 @@ alias sourceme='source ~/.zshrc'
 # Easily get current public IP
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+# Replace vim with neovim
+alias vim='nvim'
+
 # Misc.
 alias c='clear'
 alias vi='vim'
