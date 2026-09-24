@@ -1,0 +1,10 @@
+[pull]
+  rebase = true
+[push]
+  autoSetupRemote = true
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+[column]
+  ui = auto
