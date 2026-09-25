@@ -8,3 +8,6 @@
   mnemonicPrefix = true
 [column]
   ui = auto
+[user]
+  email = adam@hackeradam.com
+  name = Adam Thompson
